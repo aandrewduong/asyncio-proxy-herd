@@ -120,4 +120,4 @@ Min Latency: 0.0014 sec
 ```
 
 ## Research Report
-The research report, **report.pdf**, provides an in-depth analysis of `asyncio` as a framework for this architecture. It evaluates performance, maintainability, type safety, and comparisons with other asynchronous frameworks such as Node.js. The report also discusses Python's concurrency model, memory management, and suitability for large-scale distributed systems.
+The research [report](https://github.com/aandrewduong/asyncio-proxy-herd/blob/main/report.pdf), provides an in-depth analysis of `asyncio` as a framework for this architecture. It evaluates performance, maintainability, type safety, and comparisons with other asynchronous frameworks such as Node.js. The report also discusses Python's concurrency model, memory management, and suitability for large-scale distributed systems.
