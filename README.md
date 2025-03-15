@@ -31,7 +31,7 @@ This project implements a distributed server system using Python's `asyncio` fra
 1. Clone the repository:
    ```sh
    git clone https://github.com/aandrewduong/asyncio-proxy-herd.git
-   cd your-repo
+   cd asyncio-proxy-herd
    ```
 2. Start the servers:
    ```sh
@@ -106,18 +106,48 @@ AT Clark +0.263873386 kiwi.cs.ucla.edu +34.068930-118.445127 1621464827.95949850
 }
 ```
 
+## Connecting to the Server
+You can manually connect to a server using `nc` (Netcat) or `telnet`. This allows you to send test commands and observe server responses.
+
+### Using `nc` (Netcat)
+Netcat is a simple way to establish a TCP connection with a server.
+
+1. Find the server's port from `config.yml`.
+2. Run the following command in your terminal:
+   ```sh
+   nc <server_host> <server_port>
+   ```
+   Example:
+   ```sh
+   nc localhost 5000
+   ```
+3. Send commands by typing them and pressing Enter. For example:
+   ```
+   IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1621464827.959498503
+   ```
+   The server should respond with an `AT` message.
+
+### Using `telnet`
+Telnet can also be used to connect to the server.
+
+1. Run the following command:
+   ```sh
+   telnet <server_host> <server_port>
+   ```
+   Example:
+   ```sh
+   telnet localhost 5000
+   ```
+2. Enter commands just like in the Netcat example.
+
+These methods are useful for debugging and testing server communication.
+
 ## Benchmarking
 Run the benchmark tool to measure server latency:
 ```
 python3 benchmark.py
 ```
-Example output:
-```
-Total Requests Sent: 120
-Average Latency: 0.0342 sec
-Max Latency: 0.1023 sec
-Min Latency: 0.0014 sec
-```
 
 ## Research Report
-The research [report](https://github.com/aandrewduong/asyncio-proxy-herd/blob/main/report.pdf), provides an in-depth analysis of `asyncio` as a framework for this architecture. It evaluates performance, maintainability, type safety, and comparisons with other asynchronous frameworks such as Node.js. The report also discusses Python's concurrency model, memory management, and suitability for large-scale distributed systems.
+The research [report](https://github.com/aandrewduong/asyncio-proxy-herd/blob/main/report.pdf) provides an in-depth analysis of `asyncio` as a framework for this architecture. It evaluates performance, maintainability, type safety, and comparisons with other asynchronous frameworks such as Node.js. The report also discusses Python's concurrency model, memory management, and suitability for large-scale distributed systems.
+
